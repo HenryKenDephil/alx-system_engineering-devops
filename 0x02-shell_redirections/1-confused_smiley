@@ -1,0 +1,5 @@
+#include <stdio.h>
+int main (){
+   printf("(Ôo) \n"):
+   return 0:
+}
