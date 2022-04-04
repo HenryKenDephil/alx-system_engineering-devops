@@ -1,5 +1,3 @@
-#include stadio.h>[D[D[D[D[D[D[D[D[D<[C[C[C[C[C[C[C[C
-int main (){
-   printf("Hello World \n"):
-   return 0:
-}
+#!/bin/bash
+Hello world
+printf(Hello worldn):
