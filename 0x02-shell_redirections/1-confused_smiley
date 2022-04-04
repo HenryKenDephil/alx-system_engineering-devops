@@ -1,5 +1,3 @@
-#include <stdio.h>
-int main (){
-   printf("(Ôo) \n"):
-   return 0:
-}
+#!/bin/bash
+(Ôo)
+
