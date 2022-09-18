@@ -1,0 +1,9 @@
+The servers are added to increase efficiency and stability of the system or the running of web application services.
+Firewall is a security layer or device that monitors and filters incoming and outgoing network traffic based on the previously set security policy.
+The traffic is served over the HTTPS to offer security to the data and user’s transactions in the internet or website.
+Monitoring is used to keep check or track the server security and notify server administrators about the system vulnerability. It collects data by  comparing the incoming and outgoing traffic against the previously set security policy. It is necessary to set the web server QPS in terms of query per second in which the monitor collects the data and compares security policies against queries in every second.
+Terminating SSL at the load balancer will alleviate web servers of the extra compute cycles required to decrypt SSL traffic, hence compromising the security of the server. 
+Having a single DB server such as MYSQL may lead to system stoppage when there is system failure. Lastly, having a server with all components together is not a good idea since any intrusion might put the entire server at a risk of being compromised entirely.
+
+https://photos.app.goo.gl/XD2qwsb5pagAGjv16
+

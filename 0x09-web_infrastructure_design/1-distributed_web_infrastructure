@@ -1,0 +1,11 @@
+Adding more servers or use of multi servers improve efficiency and reliability of the services as they help websites to reload faster.
+The load balancer uses the Round Robin Scheduling algorithm to pass connections to every server sequentially after another. The connection request is sent to the last server and then starts from the last server again
+where load balancer uses an active-active  setup, the connection is distributed based on the workload’s traffic recording by the available nodes. However, in this application the load balancer uses active-passive configuration.  Load balancer will recognize a failed node and redirect the traffic to the next available node. 
+Master-Slave cluster works by enabling data from one database server to replicated to one or more database servers. The master logs the updates, which are then rippled through to the slaves. 
+Primary node in this application is the subcluster node of the database that maintains the integrity of the database. A replica node has many data bearing nodes with at least an arbiter node.
+Based on the use of multiple servers, the main issue or concerns for the SPOF is the internet outage which might result in both servers failing to reload.
+In the absence of firewalls and HTTPS, users with weak passwords can be hacked due to poor security controls.
+Lack of monitoring would mean that many things might happen around the server without being noticed until they turn into a crisis, hence leading to downtimes. 
+
+https://photos.app.goo.gl/yrMaQ3BHNto1sn9a6
+

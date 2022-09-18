@@ -1,0 +1,14 @@
+SERVER; refers to a computer program or device that provides a service to another computer and its client.
+The role of a domain name is to uniquely identify a resource on the website.
+The type of DNS record www in the www.foobar.com is a non-recursive query record because the address is specific.
+The role of a web server is to use HTTP to respond to a client request mode over the world wide web.
+The role of an application server is to link the operating system with external resources such as DBMS and the internet. It is a layer or framework that connects application development with database systems and the internet.
+The role of the database in this case is to store data or information/resources required for the application electronically for the purpose of accessing, updating and managing them.
+The server communicates with the client’s computer using the Hypertext Transfer Protocol (HTTP).
+This design uses only a single server, thus the SPOF issue in this case would be the failure of a single server which might lead to the application crashing or becoming unstoppable.
+The downtime issues might arise due to network outage, hardware and software failures, as well as human errors during code deployment.
+Scaling comes with fragmented databases  and possibility of disconnected servers which might lead to application failures.
+
+
+https://photos.app.goo.gl/VkivgUsa6cFqNpgz5
+
