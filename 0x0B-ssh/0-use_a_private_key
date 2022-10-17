@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #WrBash script that uses ssh to connect to server
  
-ssh -i ~/.ssh/school ubuntu@44.210.107.96
+ssh -i ~/.ssh/school ubuntu@44.200.168.88
