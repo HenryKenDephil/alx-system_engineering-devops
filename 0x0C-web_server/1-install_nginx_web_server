@@ -5,9 +5,9 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow "Nginx HTTP"
-chmod -r 777 /var
-#cd /var/www/
-#sudo chmod 777 html
+#chmod -r 777 /var
+cd /var/www/
+sudo chmod 777 html
 echo 'Hello World!' > html/index.html
 sudo chmod 755 html
 cd ~
