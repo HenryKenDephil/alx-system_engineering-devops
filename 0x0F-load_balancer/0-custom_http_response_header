@@ -10,4 +10,5 @@ sudo chmod 777 var
 echo "Hello World!" | tee /var/www/html/index.html
 echo "Ceci n'est pas une page"> /var/www/html/404.html
 cd~
-service nginx start
+sudo service nginx start
+
