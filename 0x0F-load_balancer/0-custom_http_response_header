@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#script that returns a custom header on request
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sed -i "47i\\\tadd_header X-Served-By $HOSTNAME;"
+/etc/nginx/sites-availabe/default
+cd var/www/html/index.html
+sudo chmod 777 var
+echo "Hello World!" | tee /var/www/html/index.html
+echo "Ceci n'est pas une page"> /var/www/html/404.html
+cd~
+service nginx start
