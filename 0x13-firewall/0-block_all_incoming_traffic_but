@@ -1,0 +1,15 @@
+#setting firewall in the server
+sudo apt update
+sudo apt install ufw
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+cat /etc/default/ufw
+sudo ufw enable
+sudo systemctl status ufw.service
+sudo ufw status
+sudo ufw allow 22
+sudo ufw allow 443
+sudo ufw allow 80
+
+
+
