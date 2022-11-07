@@ -2,5 +2,4 @@
 sudo vi /etc/ufw/before.rules
 sudo iptables -t nat -I PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 8080
 sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-sudo sysctl -p
-sudo systemctl restart ufw
+sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 8080 -j REDIRECT --to-port 80
