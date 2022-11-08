@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#changing nginx to run as nginx user
+#restricting nginx to listen to all active IPs on port 8080
+#denying use of apt-get remove
+
+sudo adduser nginx
+ls -la /home
+sudo su nginx
+echo "listen 8080 default_server;" > /etc/nginx/sites-enabled/philcode
+systemctl restart nginx.service
+chmod 0 /usr/bin/apt-get remove
