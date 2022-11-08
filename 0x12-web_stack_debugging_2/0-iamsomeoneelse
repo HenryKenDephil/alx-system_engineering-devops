@@ -1,5 +1,5 @@
 #!/usr/bin/env bash 
 # a bash script to take an argument "whoami"
 
-echo $($1)
+echo $(whoami)
 
