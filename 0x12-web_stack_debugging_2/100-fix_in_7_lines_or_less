@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-#bash script to configure the server in shorter lines and ends in new line
-
-chown nginx /etc/nginx/nginx.conf
-chmod 700 /etc/nginx/nginx.conf
-sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
-sudo -u nginx service nginx start
-echo -e "\n"
