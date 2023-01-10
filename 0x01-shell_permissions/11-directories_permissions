@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chmod a+X *
+chmod 755 $(find ./ -type d)
