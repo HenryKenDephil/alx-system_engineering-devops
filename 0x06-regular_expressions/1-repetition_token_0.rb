@@ -1,5 +1,2 @@
 #!/usr/bin/env ruby
-#matching repetion
-
-puts ARGV[0].scan(/hbt[2, 5]n/).join
-
+puts ARGV[0].scan(/hbt{2,5}n/).join
