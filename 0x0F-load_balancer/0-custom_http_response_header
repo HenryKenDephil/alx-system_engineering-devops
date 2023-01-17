@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 # Bash Script to configure an NGINX server with a custom HTTP header
-sudo apt-get update
-sudo apt install nginx -y
+sudo apt-get -y update
+sudo apt-get -y install nginx 
+
+sed -i "47i\\\tadd_header X-Serverd-By $HOSTNAME;" /etc/nginx/sites-available/default
+echo "Hello World!" | tee /var/www/html/index.html
+echo "Ceci n'est pas une page" | /var/www/html/404.html
+
+service nginx start
+
 sudo chown -R ubuntu /var/www/html
 echo "thid is mot a page" > /var/www/html/404.html
 echo "Hello World" > /var/www/html/index.html
