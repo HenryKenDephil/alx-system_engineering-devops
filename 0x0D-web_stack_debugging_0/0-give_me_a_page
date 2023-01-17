@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#a script to run container and return a page containing Hello Holberton when
-queried from the root
+#a script to run container and return a page containing Hello Holberton when^=3tHbF7
 
 sudo service apache2 start
