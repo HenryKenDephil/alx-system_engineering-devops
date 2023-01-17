@@ -1,22 +1,43 @@
 #!/usr/bin/env bash
 #bash script to display information of domain and subdomain
 
-domain_info(){
-    A=$(dig $2.$1 | awk '/ANSWER SECTION:/{getline;print;}')
-    RECORD=$(echo $A | cut -d' ' -f 4)
-    IP=$(echo $A | cut -d ' ' -f 5)
-    echo "The subdomain $2 is a $RECORD record and points to $IP"
+#domain_info(){
+   # A=$(dig $2.$1 | awk '/ANSWER SECTION:/{getline;print;}')
+    #RECORD=$(echo $A | cut -d' ' -f 4)
+    #IP=$(echo $A | cut -d ' ' -f 5)
+    #echo "The subdomain $2 is a $RECORD record and points to $IP"
+#}
+
+#if [ $# -lt 1]
+#then
+    #echo "usage: 1-world_wide_web DOMAIN SUBDOMAIN(optional)"
+#elif[ $# -eq 1]
+    #domain_info "$1" "www"
+    #domain_info "$1" "lb-01"
+    #domain_info "$1" "web-01"
+    #domain_info "$1" "web-02"
+#else
+   # domain_info "$1" "$2"
+#fi
+
+subdomains=( "www" "lb-01" "web-01" "web-02" )
+domain="$1"
+sub="$2"
+
+dig_cmd () {
+	# func variables
+	sub="$2"
+	INFO="$(dig "$sub.$domain" | grep -A1 'ANSWER SECTION:' | awk 'NR==2')"
+	IP=$(echo "$INFO" | awk '{print $5}')
+	RECORD=$(echo "$INFO" | awk '{print $4}')
+
+	echo -e "The subdomain $sub is a $RECORD record and points to $IP"
 }
 
-if [ $# -lt 1]
-then
-    echo "usage: 1-world_wide_web DOMAIN SUBDOMAIN(optional)"
-elif[ $# -eq 1]
-    domain_info "$1" "www"
-    domain_info "$1" "lb-01"
-    domain_info "$1" "web-01"
-    domain_info "$1" "web-02"
-else
-    domain_info "$1" "$2"
+if [ $# -eq 1 ]; then
+	for subs in "${subdomains[@]}"; do
+		dig_cmd "$domain" "$subs"
+	done
+elif [ $# -eq 2 ]; then
+	dig_cmd "$domain" "$sub"
 fi
-
