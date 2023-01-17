@@ -38,11 +38,6 @@ defaults
 listen balancer
 
         #frontend haproxy-main
-        bind *:80
-        bind *:443 ssl crt /etc/haproxy/certs/www.philcode.tech.pem
-        http-request redirect scheme https unless { ssl_fc }
-        option forwardfor
-        default_backend apache_webservers
         bind :80
 	bind *:443 ssl crt /etc/letsencrypt/live/www.philcode.tech/fullchain.pem
 
