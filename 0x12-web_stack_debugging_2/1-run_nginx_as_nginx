@@ -3,12 +3,17 @@
 #restricting nginx to listen to all active IPs on port 8080
 #denying use of apt-get remove
 
-sudo chmod 644 /etc/nginx/sites-available/philcode
-sudo adduser nginx
-ls -la /home
-sudo su nginx
-echo "listen 8080 default_server;" > /etc/nginx/sites-enabled/philcode
-sed -i "1 i user nginx;" /etc/nginx/nginx.conf
-sudo systemctl restart nginx.service
-chmod 000 /usr/bin/apt-get remove
+#sudo chmod 644 /etc/nginx/sites-available/philcode
+#sudo adduser nginx
+#ls -la /home
+#sudo su nginx
+#echo "listen 8080 default_server;" > /etc/nginx/sites-enabled/philcode
+#sed -i "1 i user nginx;" /etc/nginx/nginx.conf
+#sudo systemctl restart nginx.service
+#chmod 000 /usr/bin/apt-get remove
 
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+chmod 644 /etc/nginx/nginx.conf
+pkill apache2
+sudo -u nginx service nginx start
