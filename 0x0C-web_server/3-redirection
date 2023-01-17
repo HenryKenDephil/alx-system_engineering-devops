@@ -1,33 +1,33 @@
 #!/usr/bin/env bash
 #configure Nginx server so that it redirect to another page
 
-#sudo apt-get update -y
-#sudo apt-get install nginx -y
-#echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo apt-get update -y
+sudo apt-get install nginx -y
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
-#new_config=\
-#"server {
-       # listen 80 default_server;
-       # listen [::]:80 default_server;
-               #root /var/www/html;
-        #index index.html index.htm index.nginx-debian.html;
-        #server_name _;
-        #location / {
-             #   try_files \$uri \$uri/ =404;
-       # }
-      #  if (\$request_filename ~ redirect_me){
-      #      rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-      #  }
-#}
-#"
+new_config=\
+"server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+               root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name _;
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
+        if (\$request_filename ~ redirect_me){
+            rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+        }
+}
+"
 
-#echo "$new_config" > /etc/nginx/sites-available/default
-#if [ "$(pgrep nginx)" -le 0 ];
-#then
-    #service nginx start
-#else
-    #service nginx restart
-#fi;
+echo "$new_config" > /etc/nginx/sites-available/default
+if [ "$(pgrep nginx)" -le 0 ];
+then
+    service nginx start
+else
+    service nginx restart
+fi;
 
 sed -i "48i\\\tif (\$request_file ~redirect_me){\n\t\t
 rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n\t}" /etc/nginx/sites-available/default
